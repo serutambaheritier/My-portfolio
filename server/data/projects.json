@@ -1,0 +1,67 @@
+[
+  {
+    "id": "delivery-truck-system",
+    "title": "Delivery Truck System",
+    "category": "Web Application",
+    "image": "https://images.unsplash.com/photo-1516576885502-d46341ebd360?auto=format&fit=crop&w=800&q=80",
+    "description": "A comprehensive logistics and fleet management platform that tracks delivery routes, manages dispatchers and drivers, schedules shifts, and monitors truck telemetry in real-time. Features an interactive leaflet map interface, automatic route optimization, and driver workload analytics.",
+    "tags": ["React", "Node.js", "Leaflet.js", "Express", "MongoDB"],
+    "type": "Full-Stack Web App",
+    "date": "Feb 2026",
+    "role": "Full-Stack Developer",
+    "liveLink": "#",
+    "githubLink": "https://github.com/serutambaheritier/Delivery-Truck-System.git"
+  },
+  {
+    "id": "smrs",
+    "title": "Smart Medication Reminder System",
+    "category": "Web Application",
+    "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80",
+    "description": "A comprehensive healthcare application designed to manage medication schedules, send automated reminders, and track patient adherence. Built with features for secure patient login, doctor portal synchronization, and real-time dosage logs to ensure healthcare compliance and safety.",
+    "tags": ["React", "TypeScript", "Node.js", "MySQL", "JWT"],
+    "type": "Full-Stack Web App",
+    "date": "May 2026",
+    "role": "Software Architect & Lead Developer",
+    "liveLink": "#",
+    "githubLink": "https://github.com/serutambaheritier/Serutamba-Heritier-27141-SMRS-.git"
+  },
+  {
+    "id": "medifix",
+    "title": "Medifix Portal",
+    "category": "Web Application",
+    "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    "description": "Medifix is a comprehensive medical portal designed to optimize doctor-patient scheduling and telemedicine workflows. Built from Figma mockups, this responsive front-end application features multi-criteria doctor filtering, real-time schedule slot bookings, secure user login layouts, and a doctor workspace dashboard to manage upcoming appointments and patient files.",
+    "tags": ["React", "Tailwind CSS", "TypeScript", "Figma", "Vite"],
+    "type": "Front-End / UI Design",
+    "date": "Jan 2026",
+    "role": "Lead Developer & UI Designer",
+    "liveLink": "#",
+    "githubLink": "https://github.com/serutambaheritier/Medifix"
+  },
+  {
+    "id": "iot-hub",
+    "title": "Smart Home IoT Hub",
+    "category": "IoT / Embedded",
+    "image": "iot.jpg",
+    "description": "An interactive local dashboard monitoring and controlling smart home devices. Telemetry is collected using DHT11 sensors hooked up to a Raspberry Pi, logging variables like temperature, ambient light, and power usage. Data is pushed using a C++ web socket server and rendered in a React dashboard showcasing real-time gauges, status charts, and smart controls.",
+    "tags": ["C++", "React", "Raspberry Pi", "WebSocket", "Chart.js"],
+    "type": "IoT / Full-Stack",
+    "date": "Mar 2026",
+    "role": "Hardware Engineer & Developer",
+    "liveLink": "#",
+    "githubLink": "https://github.com/serutambaheritier"
+  },
+  {
+    "id": "aether-ui",
+    "title": "Aether Design System",
+    "category": "UI/UX Design",
+    "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+    "description": "Aether is a modern, light and dark mode design language built to speed up SaaS development. It includes complete Figma components (buttons, input grids, dropdowns, navigation grids) using Auto Layout, comprehensive tokens for color themes and typography, as well as several responsive template pages. Highly praised for its clarity and developer hand-off friendliness.",
+    "tags": ["Figma", "UI/UX Design", "Design Tokens", "Design System"],
+    "type": "UI/UX Design",
+    "date": "May 2026",
+    "role": "UI Designer",
+    "liveLink": "#",
+    "githubLink": "https://github.com/serutambaheritier"
+  }
+]
