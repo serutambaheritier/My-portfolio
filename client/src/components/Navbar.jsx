@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = ({ theme, toggleTheme }) => {
+const Navbar = ({ theme, toggleTheme, onOpenResume }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -25,7 +25,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="container">
         <a href="#" className="logo" onClick={handleLinkClick}>
-          <span class="logo-icon">HS</span>
+          <span className="logo-icon">HS</span>
           <span>Heritier</span>
         </a>
 
@@ -33,8 +33,20 @@ const Navbar = ({ theme, toggleTheme }) => {
         <nav>
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`} id="nav-menu">
             <li><a href="#about" className="nav-link" onClick={handleLinkClick}>About</a></li>
+            <li><a href="#services" className="nav-link" onClick={handleLinkClick}>Services</a></li>
             <li><a href="#skills" className="nav-link" onClick={handleLinkClick}>Skills</a></li>
+            <li><a href="#experience" className="nav-link" onClick={handleLinkClick}>Experience</a></li>
             <li><a href="#projects" className="nav-link" onClick={handleLinkClick}>Projects</a></li>
+            <li><a href="#testimonials" className="nav-link" onClick={handleLinkClick}>Testimonials</a></li>
+            <li>
+              <button 
+                className="btn btn-secondary btn-sm nav-resume-btn" 
+                onClick={() => { handleLinkClick(); onOpenResume(); }}
+                style={{ fontSize: '0.85rem', padding: '0.4rem 1rem' }}
+              >
+                Resume CV
+              </button>
+            </li>
             <li><a href="#contact" className="btn btn-contact" onClick={handleLinkClick}>Contact Me</a></li>
           </ul>
         </nav>
@@ -46,6 +58,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             id="theme-toggle" 
             aria-label="Toggle Theme"
             onClick={toggleTheme}
+            title="Toggle Light/Dark Theme"
           >
             <svg className="sun-icon" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="5"></circle>

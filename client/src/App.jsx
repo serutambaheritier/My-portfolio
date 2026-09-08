@@ -4,14 +4,22 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProjectModal from './components/ProjectModal';
+import ResumeModal from './components/ResumeModal';
+import ScrollToTop from './components/ScrollToTop';
+import Toast from './components/Toast';
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastVisible, setToastVisible] = useState(false);
 
   // Apply and persist theme
   useEffect(() => {
@@ -23,9 +31,16 @@ function App() {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
-  // Scroll Reveal & Active Links Observer (ported from script.js)
+  const triggerToast = (msg) => {
+    setToastMessage(msg);
+    setToastVisible(true);
+    setTimeout(() => {
+      setToastVisible(false);
+    }, 3000);
+  };
+
+  // Scroll Reveal & Active Links Observer
   useEffect(() => {
-    // 1. Scroll Reveal Observer
     const revealCallback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -44,7 +59,6 @@ function App() {
       revealObserver.observe(el);
     });
 
-    // 2. Active Nav Link on Scroll Observer
     const sections = document.querySelectorAll('section, header');
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -53,7 +67,7 @@ function App() {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
           navLinks.forEach(link => {
-            const href = link.getAttribute('href').replace('#', '');
+            const href = link.getAttribute('href')?.replace('#', '');
             if (href === id || (id === 'home' && href === '')) {
               link.classList.add('active');
             } else {
@@ -63,8 +77,8 @@ function App() {
         }
       });
     }, {
-      threshold: 0.3,
-      rootMargin: '-10% 0px -70% 0px'
+      threshold: 0.2,
+      rootMargin: '-10% 0px -60% 0px'
     });
 
     sections.forEach(section => {
@@ -79,27 +93,31 @@ function App() {
     };
   }, []);
 
-  const handleOpenModal = (project) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
-
   return (
     <>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar 
+        theme={theme} 
+        toggleTheme={toggleTheme} 
+        onOpenResume={() => setIsResumeOpen(true)} 
+      />
       <main>
-        <Hero />
+        <Hero 
+          onOpenResume={() => setIsResumeOpen(true)} 
+          onCopyEmail={triggerToast} 
+        />
         <About />
         <Services />
         <Skills />
-        <Projects onOpenModal={handleOpenModal} />
+        <Experience />
+        <Projects onOpenModal={(p) => setSelectedProject(p)} />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />
-      <ProjectModal project={selectedProject} onClose={handleCloseModal} />
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
+      <ScrollToTop />
+      <Toast message={toastMessage} visible={toastVisible} />
     </>
   );
 }

@@ -22,3 +22,5 @@ server/data/messages.json
 .idea/
 .DS_Store
 Thumbs.db
+
+.vercel

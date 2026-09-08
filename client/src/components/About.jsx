@@ -12,32 +12,61 @@ const About = () => {
         <div className="about-grid">
           <div className="about-img-container reveal active">
             <div className="about-banner">
-              <h3>My Philosophy</h3>
+              <h3>My Engineering Philosophy</h3>
               <p>
-                I believe great design is not just how something looks, but how it works. I focus on creating responsive layouts, smooth interactions, and clean codebase structures.
+                I believe great software design is not just how something looks, but how intuitively and reliably it works. I focus on modular architectures, responsive design tokens, clean code structures, and smooth micro-interactions.
               </p>
-              <div className="about-stats">
-                <div className="stat-item">
-                  <span className="stat-number">12+</span>
-                  <span className="stat-label">Technologies</span>
+              
+              {/* Stat Items Grid */}
+              <div className="about-stats-grid">
+                <div className="stat-card">
+                  <span className="stat-number gradient-text">15+</span>
+                  <span className="stat-label">Projects Built</span>
                 </div>
-                <div className="stat-item">
-                  <span className="stat-number">3+</span>
-                  <span className="stat-label">Services</span>
+                <div className="stat-card">
+                  <span className="stat-number gradient-text">12+</span>
+                  <span className="stat-label">Tech Tools</span>
+                </div>
+                <div className="stat-card">
+                  <span className="stat-number gradient-text">100%</span>
+                  <span className="stat-label">Responsive Design</span>
+                </div>
+                <div className="stat-card">
+                  <span className="stat-number gradient-text">3+</span>
+                  <span className="stat-label">Years Learning & Engineering</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="about-info reveal active reveal-delay-2">
-            <h3>Designing solutions tailored to your needs.</h3>
+            <span className="about-badge">AUCA Undergraduate & Full-Stack Developer</span>
+            <h3>Building scalable full-stack digital solutions tailored to real-world needs.</h3>
             <p>
-              I work closely with clients and team members to design web interfaces from scratch or based on detailed project suggestions, consulting and iterating through every step of the development cycle to ensure top-notch quality.
+              As an Undergraduate Software Engineering student at the Adventist University of Central Africa (AUCA), I design and architect web applications end-to-end. I convert business logic and Figma UI designs into responsive frontends backed by robust RESTful APIs.
             </p>
             <p>
-              As a software engineering student, I combine academic principles with modern web development practices to build scalable front-end systems.
+              Combining solid software engineering principles with modern full-stack technologies like React, Node.js, Express, MySQL, and MongoDB, I deliver production-ready code built for performance, longevity, and seamless user experiences.
             </p>
-            <a href="#contact" className="btn btn-primary" style={{ marginTop: '1rem' }}>Let's Collaborate</a>
+
+            <div className="about-features-list">
+              <div className="feature-item">
+                <div className="feature-icon">⚡</div>
+                <div>
+                  <h4>High Performance</h4>
+                  <p>Optimized bundle sizes, fast load times, and smooth 60fps animations.</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">🎨</div>
+                <div>
+                  <h4>User-Centric Design</h4>
+                  <p>Pixel-perfect UI translation from Figma with accessible color contrast.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>Let's Collaborate</a>
           </div>
         </div>
       </div>
